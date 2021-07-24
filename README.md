@@ -1,6 +1,6 @@
 # vim-plug-config
 
-A simple plugin which allows to manage the configuration per plugin in combination with [vim.plug](https://github.com/junegunn/vim-plug).
+A simple plugin which allows to manage the configuration per plugin in combination with [vim-plug](https://github.com/junegunn/vim-plug).
 The advantage is, that it will load configs automatically if available and the plugin is loaded. Works also with lazy loaded plugins.
 
 ## Configuration
