@@ -11,7 +11,17 @@ You have to define at lease path where configs are located. All the paths will b
 let g:plug_config_dirs = ['~/.nvim/pluginconfigs', '~/git/vim-plugin-configs']
 ```
 
+Place this configuration before the `plug#begin()`
+
 ## Create or Edit
 
 Just call `PlugConfig <pluginname>` and it will either open an existing one (first one found) or it will create one in the first directory. Autocomplete is supported, too.
 
+
+## Installation
+
+Simple as you already know
+
+```
+Plug 'm42e/vim-plug-config
+```
