@@ -25,3 +25,5 @@ Simple as you already know
 ```
 Plug 'm42e/vim-plug-config
 ```
+
+Add it as last plugin, to be sure the plugins are all loaded before the config is.
