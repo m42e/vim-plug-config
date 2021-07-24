@@ -59,6 +59,5 @@ function! s:names(...)
 endfunction
 
 call s:load_all_configs()
-let s:plug_names = keys(g:plugs)
 
 command! -nargs=1 -bar -complete=customlist,s:names PlugConfig call s:edit_config(<f-args>)
