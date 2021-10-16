@@ -55,7 +55,7 @@ function! s:load_all_configs()
 endfunction
 
 function! s:names(...)
-  return sort(keys(g:plugs))
+  return sort(filter(keys(g:plugs), 'stridx(v:val, a:1) == 0'))
 endfunction
 
 call s:load_all_configs()
