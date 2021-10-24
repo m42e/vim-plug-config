@@ -3,6 +3,10 @@ if exists("g:vim_plug_config") || &cp || v:version < 700
 endif
 let g:vim_plug_config = 1
 
+function! s:get_plugin_names()
+  return keys(g:plugs) + ['bindings']
+endfunction
+
 function! s:get_config_path(name, create)
   " uniform name, remove vim prefix
   let l:pluginconfig = tolower(a:name).'.vim'
@@ -45,8 +49,8 @@ endfunction
 
 function! s:load_all_configs()
   let g:plugs_configs = {}
-  for plug in keys(g:plugs)
-    if has_key(g:plugs[plug], 'on') || has_key(g:plugs[plug], 'for')
+  for plug in s:get_plugin_names()
+    if has_key(g:plugs, plug) && ( has_key(g:plugs[plug], 'on') || has_key(g:plugs[plug], 'for') )
       execute 'autocmd User ' . plug . ' call s:load_config("' . plug . '")'
     else
       call s:load_config(plug)
@@ -55,7 +59,7 @@ function! s:load_all_configs()
 endfunction
 
 function! s:names(...)
-  return sort(filter(keys(g:plugs), 'stridx(v:val, a:1) == 0'))
+  return sort(filter(s:get_plugin_names(), 'stridx(v:val, a:1) == 0'))
 endfunction
 
 call s:load_all_configs()

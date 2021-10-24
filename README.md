@@ -15,7 +15,10 @@ Place this configuration before the `plug#begin()`
 
 ## Create or Edit
 
-Just call `PlugConfig <pluginname>` and it will either open an existing one (first one found) or it will create one in the first directory. Autocomplete is supported, too.
+Just call `PlugConfig <pluginname|'bindings'>` and it will either open an existing one (first one found) or it will create one in the first directory. Autocomplete is supported, too.
+
+`binding` is a special one, it will always be present and loaded if the file exists, regardless of the existence of a plugin named like this. It can be used to have bindings/mapping which trigger the loading of a plugin. In my case it contains `<leader>n :NERDTreeFocus<CR>` for example.
+
 
 
 ## Installation
